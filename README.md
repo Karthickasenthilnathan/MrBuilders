@@ -53,6 +53,8 @@ src/
 ├── App.jsx
 └── main.jsx
 
+---
+
 🚀 Getting Started
 1️⃣ Clone the Repository
 git clone https://github.com/your-username/mr-builders-website.git
@@ -68,3 +70,40 @@ npm run dev
 Karthicka
 Frontend Developer | Computer Science Student
 Focused on building clean, scalable, and real-world web applications.
+
+
+
+---
+
+# 📙 2. TECHNICAL DOCUMENTATION
+
+### 📌 Project Overview
+The MR Builders website is a **single-page application (SPA)** built to represent a professional construction company online presence. The goal was to deliver a **realistic client-ready website** rather than a demo or template.
+
+---
+
+## 🧠 Architecture Decisions
+
+### 🔹 Component-Based Architecture
+- Each UI section is modularized into reusable components.
+- Improves maintainability and scalability.
+
+### 🔹 Page-Based Routing
+- `react-router-dom` handles navigation between:
+  - Home
+  - About
+  - Services
+  - Projects
+
+### 🔹 Centralized Modal Control
+- Modal visibility (`ContactFormModal`, `JoinUsModal`) is controlled from `App.jsx`.
+- Props are passed down to Navbar, Footer, and pages to trigger modals.
+
+---
+
+## 🧩 State Management
+
+```js
+const [formOpen, setFormOpen] = useState(false)
+const [joinOpen, setJoinOpen] = useState(false)
+
