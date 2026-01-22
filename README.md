@@ -57,7 +57,8 @@ src/
 ---
 
 
-##🚀 Getting Started
+## 🚀 Getting Started
+
 1️⃣ Clone the Repository
 git clone https://github.com/your-username/mr-builders-website.git
 
@@ -66,9 +67,11 @@ npm install
 
 3️⃣ Run Development Server
 npm run dev
+
 ---
 
-#👤 Author
+
+## 👤 Author
 
 Karthicka
 Frontend Developer | Computer Science Student
@@ -106,7 +109,4 @@ The MR Builders website is a **single-page application (SPA)** built to represen
 
 ## 🧩 State Management
 
-```js
-const [formOpen, setFormOpen] = useState(false)
-const [joinOpen, setJoinOpen] = useState(false)
-
+```
