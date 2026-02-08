@@ -1,16 +1,64 @@
 import { motion } from "framer-motion"
+import project1 from "../assets/images/project1jpg.jpg"
+import project2 from "../assets/images/project2.jpg"
+import project3 from "../assets/images/project3.jpg"
+import project4 from "../assets/images/project4.jpg"
+import project5 from "../assets/images/project5.jpg"
+import project6 from "../assets/images/project6.jpg"
+import project7 from "../assets/images/project7.jpg"
+import project8 from "../assets/images/project8.jpg"
+import project9 from "../assets/images/project9.jpg"
+
+
 
 const projects = [
-  { title: "Luxury Villa Project", location: "ECR, Chennai" },
-  { title: "Independent House Construction", location: "Velachery" },
-  { title: "Modern Duplex Residence", location: "OMR, Chennai" },
-  { title: "Residential Apartment Project", location: "Medavakkam" },
-  { title: "Commercial Building", location: "T Nagar" },
-  { title: "Premium Villa Construction", location: "Sholinganallur" },
-  { title: "Custom Built Home", location: "Tambaram" },
-  { title: "Contemporary Residence", location: "Perungudi" },
-  { title: "Turnkey House Project", location: "Pallikaranai" },
+  {
+    title: "Luxury Villa Project",
+    location: "ECR, Chennai",
+    image: project1,
+  },
+  {
+    title: "Independent House Construction",
+    location: "Velachery",
+    image: project2,
+  },
+  {
+    title: "Modern Duplex Residence",
+    location: "OMR, Chennai",
+    image: project3,
+  },
+  {
+    title: "Residential Apartment Project",
+    location: "Medavakkam",
+    image: project4,
+  },
+  {
+    title: "Commercial Building",
+    location: "T Nagar",
+    image: project5,
+  },
+  {
+    title: "Premium Villa Construction",
+    location: "Sholinganallur",
+    image: project6,
+  },
+  {
+    title: "Custom Built Home",
+    location: "Tambaram",
+    image: project7,
+  },
+  {
+    title: "Contemporary Residence",
+    location: "Perungudi",
+    image: project8,
+  },
+  {
+    title: "Turnkey House Project",
+    location: "Pallikaranai",
+    image: project9,
+  },
 ]
+
 
 const Projects = () => {
   return (
@@ -50,11 +98,12 @@ const Projects = () => {
                 "
               >
                
-                <div className="h-60 bg-gray-200 rounded-t-2xl flex items-center justify-center">
-                  <span className="text-gray-500 text-sm">
-                    Project Image Placeholder
-                  </span>
-                </div>
+                <img
+  src={project.image}
+  alt={project.title}
+  className="h-60 w-full object-cover object-center rounded-t-2xl"
+/>
+
 
                 
                 <div className="p-6">

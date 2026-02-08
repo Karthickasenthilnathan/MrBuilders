@@ -1,12 +1,33 @@
 import { motion } from "framer-motion"
+import leader1 from "../assets/images/leader1.jpg"
+import leader2 from "../assets/images/leader2.jpg"
+import leader3 from "../assets/images/leader3.jpg"
 
 const About = ({ setFormOpen }) => {
+
+  const team = [
+    {
+      name: "Jessica Smith",
+      role: "Chief Executive Officer",
+      image: leader1,
+    },
+    {
+      name: "Carol Johnson",
+      role: "Operations Manager",
+      image: leader2,
+    },
+    {
+      name: "Sarah Williams",
+      role: "Project Director",
+      image: leader3,
+    },
+  ]
+
   return (
     <main className="bg-gray-100">
 
       <section className="bg-gray-900 text-white py-28">
         <div className="container mx-auto px-6 text-center">
-
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -25,123 +46,17 @@ const About = ({ setFormOpen }) => {
             Building trust, quality, and excellence through reliable
             construction solutions in Chennai.
           </motion.p>
-
-        </div>
-      </section>
-
-      <section className="py-20">
-        <div className="container mx-auto px-6 max-w-5xl">
-
-          <motion.h2
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-3xl font-bold text-darkGray mb-6"
-          >
-            Who We Are
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.05 }}
-            className="text-gray-700 leading-relaxed text-lg"
-          >
-            MR Builders is a Chennai-based construction company specializing
-            in residential and commercial projects.
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="mt-4 text-gray-700 leading-relaxed text-lg"
-          >
-            Our team combines technical expertise with modern construction
-            practices to ensure every project is executed with precision.
-          </motion.p>
-
-        </div>
-      </section>
-
-      <section className="bg-white py-20">
-        <div className="container mx-auto px-6 max-w-5xl">
-
-          <motion.h2
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-3xl font-bold text-darkGray mb-6"
-          >
-            Our Experience
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.05 }}
-            className="text-gray-700 leading-relaxed text-lg"
-          >
-            With years of experience in the construction industry, MR Builders
-            has successfully completed a wide range of projects.
-          </motion.p>
-
-        </div>
-      </section>
-
-      <section className="py-20">
-        <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 max-w-5xl">
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200"
-          >
-            <h3 className="text-2xl font-semibold text-darkGray mb-4">
-              Our Vision
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              To be a trusted construction company recognized for quality
-              workmanship and ethical practices.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200"
-          >
-            <h3 className="text-2xl font-semibold text-darkGray mb-4">
-              Our Mission
-            </h3>
-            <ul className="text-gray-600 space-y-3 leading-relaxed">
-              <li>• Deliver high-quality construction projects</li>
-              <li>• Maintain transparency and integrity</li>
-              <li>• Ensure timely execution</li>
-            </ul>
-          </motion.div>
-
         </div>
       </section>
 
       <section className="py-20">
         <div className="container mx-auto px-6 text-center">
-
           <motion.h2
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-3xl font-bold text-darkGray mb-4"
+            className="text-3xl font-bold text-darkGray mb-10"
           >
             Our Leadership Team
           </motion.h2>
@@ -156,7 +71,7 @@ const About = ({ setFormOpen }) => {
             }}
             className="grid gap-10 md:grid-cols-3 max-w-6xl mx-auto"
           >
-            {[1, 2, 3].map((_, i) => (
+            {team.map((member, i) => (
               <motion.div
                 key={i}
                 variants={{
@@ -164,14 +79,21 @@ const About = ({ setFormOpen }) => {
                   show: { opacity: 1, y: 0 },
                 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
+                whileHover={{ y: -6 }}
                 className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200"
               >
-                <div className="h-52 bg-gray-200 rounded-xl mb-4" />
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="h-52 w-full object-cover object-center rounded-xl mb-4"
+                />
+
                 <h4 className="text-xl font-semibold text-darkGray">
-                  Team Member Name
+                  {member.name}
                 </h4>
+
                 <p className="text-gray-500">
-                  Designation
+                  {member.role}
                 </p>
               </motion.div>
             ))}
